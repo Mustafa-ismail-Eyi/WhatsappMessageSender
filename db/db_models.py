@@ -58,7 +58,7 @@ class User(Base):
 class Messages(Base):
     __tablename__ = "messages"
     
-    message_id = Column(Integer, primary_key = True, index=True)
+    message_id = Column(Integer, primary_key = True, index=True, autoincrement=True)
     message_body = Column(String)
     message_type = Column(Enum(MessageType))
    

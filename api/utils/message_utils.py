@@ -19,3 +19,10 @@ def get_message_by_id(
     if db_message := db.query(Messages).filter(Messages.message_id == message_id).first():
         return db_message
     return None
+
+def delete_message_by_id(db:Session, message_id: int):
+    if db_message := db.query(Messages).get(message_id):        
+        db.delete(db_message)
+        db.commit()
+        return True
+    return False

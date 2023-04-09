@@ -3,6 +3,7 @@ import uvicorn
 #import routers
 from api.user import user_router
 from api.contacts import contact_router
+from api.message import message_router
 #import engine
 from db import engine, Base
 
@@ -29,7 +30,7 @@ Base.metadata.create_all(engine)
 #register the routers
 app.include_router(user_router)
 app.include_router(contact_router)
-
+app.include_router(message_router)
 # connect flask
 # from fastapi.middleware.wsgi import WSGIMiddleware
 # from web_app.app import flask_app
